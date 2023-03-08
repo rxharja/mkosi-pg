@@ -1,0 +1,10 @@
+mkdir /home/postgres-data
+
+/usr/bin/podman load -i /postgres.tar && rm /postgres.tar
+/usr/bin/podman load -i /pgadmin4.tar && rm /pgadmin4.tar
+
+/usr/libexec/podman/quadlet /etc/systemd/system
+
+# user generation
+#adduser --disabled-password --gecos "" test
+#echo "test:test" | chpasswd

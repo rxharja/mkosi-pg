@@ -1,0 +1,16 @@
+[Unit]
+Description=PG Admin 4
+After=local-fs.target
+
+[Container]
+Image=pgadmin4
+ContainerName=pgadmin
+Network=host
+Environment=PGADMIN_DEFAULT_EMAIL=test@test.com
+Environment=PGADMIN_DEFAULT_PASSWORD=test
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

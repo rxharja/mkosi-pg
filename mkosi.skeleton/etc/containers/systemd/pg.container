@@ -1,0 +1,13 @@
+[Unit]
+Description=Postgres
+After=local-fs.target
+
+[Container]
+Image=postgres
+ContainerName=pg
+Volume=/home/postgres-data:/var/lib/postgresql/data 
+Network=host
+Environment=POSTGRES_PASSWORD=postgres
+
+[Install]
+WantedBy=multi-user.target default.target
