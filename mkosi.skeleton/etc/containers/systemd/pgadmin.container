@@ -5,6 +5,7 @@ After=local-fs.target
 [Container]
 Image=pgadmin4
 ContainerName=pgadmin
+Label=io.containers.autoupdate=local
 Network=host
 Environment=PGADMIN_DEFAULT_EMAIL=test@test.com
 Environment=PGADMIN_DEFAULT_PASSWORD=test

@@ -5,6 +5,7 @@ After=local-fs.target
 [Container]
 Image=apex
 ContainerName=apex
+Label=io.containers.autoupdate=local
 Network=host
 
 [Install]
