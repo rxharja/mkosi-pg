@@ -1,10 +1,17 @@
 mkdir /home/postgres-data
 
-/usr/bin/podman load -i /postgres.tar && rm /postgres.tar
-/usr/bin/podman load -i /pgadmin4.tar && rm /pgadmin4.tar
-
+#/usr/bin/podman load -i /postgres.tar && rm /postgres.tar
+#/usr/bin/podman load -i /pgadmin4.tar && rm /pgadmin4.tar
+/usr/bin/podman load -i /apex.tar && rm /apex.tar
 /usr/libexec/podman/quadlet /etc/systemd/system
 
 # user generation
-#adduser --disabled-password --gecos "" test
-#echo "test:test" | chpasswd
+adduser apex 
+echo "apex:apex" | chpasswd
+usermod -aG wheel apex
+
+su - apex -c xdg-user-dirs-update
+cp /etc/xdg/autostart/Apex.desktop /home/apex/Desktop/Apex.desktop
+chown apex:apex /home/apex/Desktop/Apex.desktop
+#su - apex -c 'gio set /home/apex/Desktop/Apex.desktop -t string metadata::trust "true"'
+

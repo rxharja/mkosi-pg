@@ -1,19 +1,20 @@
 [Distribution]
 Distribution=fedora
+Release=37
 
 [Output]
 Format=gpt_ext4
 Bootable=yes
-BootProtocols=bios
 
 [Content]
 WithNetwork=yes
 BasePackages=yes
-Packages=podman,iproute,neofetch
+Packages=podman,iproute,neofetch,chromium,@lxqt,gvfs
 Autologin=yes
 
 [Partitions]
-HomeSize=3G
+RootSize=5G
+HomeSize=1G
 SwapSize=500M
 
 [Host]

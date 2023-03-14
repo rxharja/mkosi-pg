@@ -1,0 +1,11 @@
+[Unit]
+Description=APEX
+After=local-fs.target
+
+[Container]
+Image=apex
+ContainerName=apex
+Network=host
+
+[Install]
+WantedBy=multi-user.target default.target
